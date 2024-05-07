@@ -11,7 +11,9 @@ function Phrase(content) {
 
   // Returns content processed for palindrome testing.
   this.processedContent = function processedContent() {
-    return this.content.toLowerCase();
+    let nonPunctuationContent = (this.content.match(/[a-z]/gi) || []).join('');
+    let lowercaseContent = nonPunctuationContent.toLowerCase();
+    return lowercaseContent;
   }
 
   // Returns true if the phrase is a palindrome, false otherwise.
